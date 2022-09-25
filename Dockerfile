@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y  -o Dpkg::Options::="--force-confdef" -
 #http://loto.sourceforge.net/feram/INSTALL.html
 RUN apt-get install -y libatlas-base-dev gfortran libfftw3-dev gnuplot ruby make
 RUN apt-get --purge remove liblapack-dev liblapack3 
-#RUN apt-get --purge remove liblapack3gf
 
 #feram本体をダウンロード
 RUN apt-get install -y wget
@@ -34,7 +33,3 @@ WORKDIR src
 RUN make -j --max-load=10.0
 
 
-RUN cp -r ../../src/27example-BaTiO3-new-param-E_wave .
-WORKDIR 27example-BaTiO3-new-param-E_wave
-RUN ../feram 360cos.feram 360sin.feram
-#RUN gnuplot hysteresis.gp  # plot a hysteresis loop
