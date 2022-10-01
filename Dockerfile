@@ -25,7 +25,8 @@ RUN tar xfv feram-0.26.04.tar
 #ファイル移動。Dockerfileではcdが使えないのでWORKDIRで代用。
 WORKDIR feram-0.26.04 
 RUN mkdir build-gfortran-4.8
-WORKDIR cd $_
+#WORKDIR cd $_
+WORKDIR build-gfortran-4.8
 
 #ビルド
 RUN ../configure
