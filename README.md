@@ -9,9 +9,16 @@ To make it easy to start, I created a Dockerfile to start feram.
 
 ### Activation Method
 
+Build image from Dockerfile.
+Install feram.
+```
 docker build --progress=plain -t feram .
+```
 
-docker run feram
+Start the container at the same time as creating the container, and log in automatically at that timing.
+```
+docker run -it feram
+```
 
-docker container exec -it コンテナ名 bash
-
+To get out of the login state, hold down "ctrl" and press "P, Q" in order.
+This exit is called "dettach".
