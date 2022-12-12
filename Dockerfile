@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y  -o Dpkg::Options::="--force-confdef" -
 
 #各種インストール
 #http://loto.sourceforge.net/feram/INSTALL.html
-RUN apt-get install -y libatlas-base-dev gfortran libfftw3-dev gnuplot ruby make
+RUN apt-get install -y libatlas-base-dev gfortran libfftw3-dev gnuplot ruby make imagemagick
 RUN apt-get --purge remove liblapack-dev liblapack3 
 
 #feram本体をダウンロード
@@ -25,7 +25,6 @@ RUN tar xfv feram-0.26.04.tar
 #ファイル移動。Dockerfileではcdが使えないのでWORKDIRで代用。
 WORKDIR feram-0.26.04 
 RUN mkdir build-gfortran-4.8
-#WORKDIR cd $_
 WORKDIR build-gfortran-4.8
 
 #ビルド
