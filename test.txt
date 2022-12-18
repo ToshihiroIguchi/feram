@@ -3,3 +3,4 @@ WORKDIR 27example-BaTiO3-new-param-E_wave
 RUN ../feram 360cos.feram 360sin.feram
 #RUN gnuplot hysteresis.gp  # plot a hysteresis loop
 
+

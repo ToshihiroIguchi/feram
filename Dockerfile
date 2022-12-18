@@ -32,4 +32,6 @@ RUN ../configure
 WORKDIR src
 RUN make -j --max-load=10.0
 
-
+#パスを通す
+ENV PATH $PATH:/feram-0.26.04/build-gfortran-4.8/src
+RUN echo $PATH
